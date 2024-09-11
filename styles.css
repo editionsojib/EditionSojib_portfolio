@@ -387,54 +387,147 @@ body {
 
 
 
-/* Footer Section Styles */
+/* General Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #111;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    border-top: 5px solid #ff5722; /* Accent color */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
-    width: 90%;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
 }
 
-.footer-container p {
+/* Left Section: Logo, Title, and Social Media */
+.footer-left {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: flex-start; /* Aligns content to the left */
+    gap: 10px; /* Space between elements */
+    position: relative;
+}
+
+.footer-text {
+    font-size: 24px;
     margin: 0;
-    font-size: 14px;
+    color: #fff;
 }
 
-.footer-links {
-    margin-top: 10px;
+.Footer-logo img {
+    width: 100px;
+    margin-bottom: 10px;
+    align-items: start;
 }
 
-.footer-links a {
-    margin: 0 10px;
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    margin: 0 8px;
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.footer-links a:hover {
-    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+.social-media a:hover img {
+    transform: scale(1.1);
 }
 
-.footer-links img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+.social-media img {
+    width: 32px;
+    height: 32px;
 }
 
-@media (max-width: 600px) {
-    .footer-links img {
-        width: 20px;
-        height: 20px;
+/* Center Section: Navigation Links */
+.footer-center {
+    display: flex;
+    align-items: center;
+}
+
+.footer-center a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-center a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section: Newsletter Signup */
+.footer-right {
+    text-align: right;
+}
+
+.footer-right p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.newsletter-form button {
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ddd;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"], .newsletter-form button {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
+
 
