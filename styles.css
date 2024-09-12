@@ -391,7 +391,7 @@ body {
 .footer {
     background-color: #111;
     color: #fff;
-    padding: 40px 20px;
+    padding: 20px 20px; /* Reduced padding to make footer height smaller */
     font-family: 'Arial', sans-serif;
 }
 
@@ -401,61 +401,56 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
     text-align: center;
     position: relative;
+    gap: 20px; /* Adjust the gap between sections */
 }
 
-/* Left Section: Logo, Title, and Social Media */
+/* Left Section: Logo and Social Media */
 .footer-left {
     display: flex;
-    flex-direction: column; /* Stacks elements vertically */
-    align-items: flex-start; /* Aligns content to the left */
-    gap: 10px; /* Space between elements */
-    position: relative;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align to the left */
+}
+
+.Footer-logo {
+    display: flex;
+    align-items: center; /* Align vertically */
+    gap: 10px; /* Space between logo and text */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.Footer-img {
+    width: 40px; /* Adjust the size of the logo */
+    height: auto;
 }
 
 .footer-text {
-    font-size: 24px;
-    margin: 0;
+    font-size: 18px; /* Adjusted font size */
+    margin: 0; /* Remove any default margins */
     color: #fff;
-}
-
-.Footer-logo img {
-    width: 100px;
-    margin-bottom: 10px;
-    align-items: start;
 }
 
 .social-media {
     display: flex;
     align-items: center;
-}
-
-.social-media a {
-    margin: 0 8px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.social-media a:hover img {
-    transform: scale(1.1);
+    gap: 10px; /* Reduce space between social media icons */
 }
 
 .social-media img {
-    width: 32px;
-    height: 32px;
+    width: 24px; /* Smaller size for social media icons */
+    height: 24px;
 }
 
 /* Center Section: Navigation Links */
 .footer-center {
     display: flex;
     align-items: center;
+    gap: 15px; /* Adjust spacing between links */
 }
 
 .footer-center a {
     color: #fff;
-    margin: 0 15px;
     text-decoration: none;
     font-size: 14px;
 }
@@ -467,27 +462,28 @@ body {
 /* Right Section: Newsletter Signup */
 .footer-right {
     text-align: right;
+    max-width: 200px; /* Limit the width of the newsletter section */
 }
 
 .footer-right p {
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin */
     font-size: 14px;
 }
 
 .newsletter-form {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px; /* Reduced gap between form elements */
 }
 
 .newsletter-form input[type="email"] {
-    padding: 8px;
+    padding: 6px; /* Reduced padding */
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
 }
 
 .newsletter-form button {
-    padding: 8px 16px;
+    padding: 6px 12px; /* Reduced padding */
     background-color: #fff;
     color: #111;
     border: 1px solid #fff;
@@ -503,9 +499,9 @@ body {
 /* Footer Bottom */
 .footer-bottom {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px; /* Reduced padding */
     border-top: 1px solid #444;
-    margin-top: 20px;
+    margin-top: 10px; /* Reduced margin */
     font-size: 12px;
 }
 
@@ -517,7 +513,7 @@ body {
     }
 
     .footer-left, .footer-center, .footer-right {
-        margin-bottom: 20px;
+        margin-bottom: 10px; /* Reduce spacing for smaller screens */
     }
 
     .newsletter-form {
@@ -526,8 +522,9 @@ body {
 
     .newsletter-form input[type="email"], .newsletter-form button {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 }
+
 
 
