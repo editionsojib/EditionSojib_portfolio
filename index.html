@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <title>Portfolio</title>
 
 
@@ -12,9 +15,11 @@
     <!-- Header Section -->
     <header class="header">
         <div class="container">
-            <h1>Welcome to My Portfolio</h1>
+            <h1>My Portfolio</h1>
+            <!-- Add a menu button for mobile -->
+            <button class="menu-button" aria-label="Menu">&#9776;</button>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
@@ -24,7 +29,7 @@
             </nav>
         </div>
     </header>
-
+    
     
     <!-- Profile Section -->
 <section id="about" class="about">
@@ -83,7 +88,7 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <h2>What People Say</h2>
+        <h2 class="testimonials-hader">What People Say</h2>
         <div class="testimonial-wrapper">
             <div class="testimonial-container">
                 <div class="testimonial">
@@ -133,12 +138,15 @@
         </div>
     </section>
 
+
     <!-- Team Section -->
 <section id="team" class="team">
     <h2>Meet Our Team</h2>
     <!-- Scroll buttons -->
-    <button class="scroll-button left" onclick="scrollTeam('left')">&lt;</button>
-    <button class="scroll-button right" onclick="scrollTeam('right')">&gt;</button>
+    <!-- Scroll buttons with Font Awesome icons -->
+<button class="scroll-button left" onclick="scrollTeam('left')"><i class="fas fa-chevron-left"></i></button>
+<button class="scroll-button right" onclick="scrollTeam('right')"><i class="fa-solid fa-chevron-right"></i></button>
+
     
     <div class="team-container">
         <div class="team-member">

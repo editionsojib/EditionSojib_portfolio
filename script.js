@@ -111,3 +111,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     startAutoScroll();
 });
+
+
+//==================JavaScript for Menu Toggle
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Toggle the 'active' class
+});
