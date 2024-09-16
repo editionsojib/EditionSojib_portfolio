@@ -24,7 +24,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -221,7 +221,7 @@
         <!-- Center Section: Navigation Links -->
         <div class="footer-center">
             <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
             <a href="#support">Customer Support</a>
             <a href="#jobs">Jobs</a>
             <a href="#team">Team</a>
@@ -230,10 +230,11 @@
         <!-- Right Section: Newsletter Signup -->
         <div class="footer-right">
             <p>Subscribe to Our Newsletter</p>
-            <form action="send_email.php" method="post" class="newsletter-form">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Submit</button>
+            <form action="index.php" method="post" class="newsletter-form">
+            <input type="email" name="subs_email" placeholder="Enter your email" required>
+            <button type="submit" name="submit">Submit</button>
             </form>
+
         </div>
     </div>
     <div class="footer-bottom">
@@ -242,12 +243,53 @@
 </footer>
 
 
-
-
-
-
-
     <script src="script.js"></script>
     
 </body>
 </html>
+
+
+<?php 
+require 'vendor/autoload.php';  // This includes PHPMailer and other libraries
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
+    
+if(isset($_POST['submit'])) {
+    
+    $email = $_POST['subs_email'];
+
+
+
+$mail = new PHPMailer(true);
+
+try {
+    // SMTP configuration
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'editionsojib@gmail.com';
+    $mail->Password = 'jsncgimyrpagjeug';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    // Recipients
+    $mail->setFrom('editionsojib@gmail.com', 'Contact');
+    $mail->addAddress('editionsojib@gmail.com', 'Sojib');
+
+    // Email content
+    $mail->isHTML(true);
+    $mail->Subject = 'Subscribe';
+    $mail->Body    = "Subscribe Email = $email";
+    
+    $mail->send();
+    echo "<div class='success'>Message has been sent!</div>";
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
+
+?>

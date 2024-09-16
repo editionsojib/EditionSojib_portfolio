@@ -279,7 +279,7 @@ body {
 
     .profile-photo {
         width: 90%; /* Adjust photo width */
-        height: 65%; /* Maintain aspect ratio */
+        height: 70%; /* Maintain aspect ratio */
         
     }
 
@@ -595,6 +595,7 @@ body {
     color: #fff;
     padding: 20px 20px; /* Reduced padding to make footer height smaller */
     font-family: 'Arial', sans-serif;
+    position: relative;
 }
 
 .footer-container {
@@ -731,8 +732,13 @@ body {
         margin-bottom: 5px;
     }
     .social-media img{
-        width: 25px; /* Smaller size for social media icons */
-        height: 25px;
+        width: 30px; /* Smaller size for social media icons */
+        height: 30px;
     }
 }
 
+.success{
+    position: absolute;
+    color: #000;
+    left: 10px;
+}
